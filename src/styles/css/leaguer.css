@@ -1,0 +1,22 @@
+.name {
+    font-size: 30px;
+}
+
+a.no-uline {
+    text-decoration: none;
+    color: black;
+}
+
+.photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.team {
+    font-size: 20px;
+}
+
+.heroes {
+    font-size: 20px;
+}

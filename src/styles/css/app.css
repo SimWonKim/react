@@ -1,0 +1,33 @@
+@font-face {
+    font-family: "OverWatch";
+    src: url("../fonts/koverwatch.ttf") format("truetype");
+}
+
+.leaguer-table {
+    font-family: OverWatch;
+    width: 60%;
+    border-collapse: collapse;
+    border: 1px solid #000000;
+    margin: auto;
+}
+
+.leaguer-table-column-tr {
+    height: 90px;
+    width: fit-content;
+    font-size: 60px;
+    border: 1px solid #000000;
+}
+
+.leaguer-table-column-th {
+    border: 1px solid #000000;
+}
+
+.leaguer-table-tr {
+    border: 1px solid #000000;
+}
+
+.leaguer-table-th {
+    border: 1px solid #000000;
+    padding: 8px;
+    font-size: 1px;
+}
