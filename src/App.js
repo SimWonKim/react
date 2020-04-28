@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Name, Photo, Team, Heroes } from "./components/leaguer";
 import "./styles/css/app.css";
+import Loading from "./components/loading";
 
 import axios from "axios";
 
