@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+
 import { Name, Photo, Team, Heroes } from "./components/leaguer";
+import PageNation from "./components/pagination";
+
 import "./styles/css/app.css";
-import Loading from "./components/loading";
 
 import axios from "axios";
 
@@ -11,20 +13,27 @@ class App extends Component {
         this.state = {
             columns: ["이름", "사진", "소속팀", "주영웅"],
             leaguers: [],
+            counts: 0,
+            page: 1,
+            size: 10,
         };
     }
 
     // componentWillMount() {} deprecated됨.
 
     async componentDidMount() {
-        const leaguers = await this.getLeaguerList();
-        this.setState({ leaguers: leaguers });
+        const queryData = {
+            size: this.state.size,
+            page: this.state.page,
+        };
+        const response = await this.getLeaguerList(queryData);
+        this.setState({ leaguers: response.leaguers, counts: response.counts });
     }
 
-    getLeaguerList = async () => {
-        const url = `${process.env.REACT_APP_SERVER_URL}/leaguers`;
+    getLeaguerList = async (query) => {
+        const url = `${process.env.REACT_APP_SERVER_URL}/leaguers?page=${query.page}&size=${query.size}`;
         const result = await axios.get(url);
-        return result.data.leaguers;
+        return result.data;
     };
 
     renderTableColums() {
@@ -62,6 +71,15 @@ class App extends Component {
         });
     }
 
+    renderPageNation() {
+        return (
+            <PageNation
+                counts={this.state.counts}
+                size={this.state.size}
+            ></PageNation>
+        );
+    }
+
     render() {
         return (
             <div>
@@ -71,6 +89,7 @@ class App extends Component {
                         {this.renderTableData()}
                     </tbody>
                 </table>
+                {this.renderPageNation()}
             </div>
         );
     }
