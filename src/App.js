@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { useLocation } from "react-router-dom";
 
 import { Name, Photo, Team, Heroes } from "./components/leaguer";
 import PageNation from "./components/pagination";
@@ -8,8 +9,21 @@ import "./styles/css/app.css";
 import axios from "axios";
 
 class App extends Component {
+    render() {
+        return (
+            <div>
+                <LeaguerTable></LeaguerTable>
+            </div>
+        );
+    }
+}
+
+export default App;
+
+class LeaguerTable extends Component {
     constructor(props) {
         super(props);
+
         this.state = {
             columns: ["이름", "사진", "소속팀", "주영웅"],
             leaguers: [],
@@ -18,8 +32,6 @@ class App extends Component {
             size: 10,
         };
     }
-
-    // componentWillMount() {} deprecated됨.
 
     async componentDidMount() {
         const queryData = {
@@ -94,5 +106,3 @@ class App extends Component {
         );
     }
 }
-
-export default App;

@@ -3,18 +3,24 @@
     src: url("../fonts/koverwatch.ttf") format("truetype");
 }
 
-.ul {
+.div {
     font-family: OverWatch;
     font-size: 20px;
     width: 700px;
-    margin-top: 5px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ul {
     list-style: none;
 }
 
 .li {
-    padding: 4px;
-    margin-left: 7px;
     border: #ffffff;
     border-width: 1px;
     float: left;
+    margin-left: 20px;
 }

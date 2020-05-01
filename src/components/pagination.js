@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import _ from "lodash";
 import "../styles/css/pagination.css";
 
+import { Link } from "react-router-dom";
+
 class PageNation extends Component {
     constructor(props) {
         super(props);
@@ -26,9 +28,11 @@ class PageNation extends Component {
         const range = _.range(loopCount);
 
         return range.map((num, index) => {
+            const url = `/leaguers?page=${num + 1}`;
+
             return (
                 <li key={index} className="li">
-                    {num + 1}
+                    <Link to={url}>{num + 1}</Link>
                 </li>
             );
         });
@@ -36,7 +40,7 @@ class PageNation extends Component {
 
     render() {
         return (
-            <div>
+            <div className="div">
                 <ul className="ul">{this.renderPageNations()}</ul>
             </div>
         );
