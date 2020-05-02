@@ -6,21 +6,17 @@
 .div {
     font-family: OverWatch;
     font-size: 20px;
-    width: 700px;
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    margin-left: auto;
+    width: 500px;
     margin-right: auto;
+    margin-left: auto;
 }
 
 .ul {
     list-style: none;
+    width: 100%;
 }
 
 .li {
-    border: #ffffff;
-    border-width: 1px;
-    float: left;
-    margin-left: 20px;
+    padding: 5px;
+    display: inline;
 }
