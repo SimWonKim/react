@@ -33,3 +33,21 @@
     padding: 8px;
     font-size: 1px;
 }
+
+.pagination-div {
+    font-family: OverWatch;
+    font-size: 20px;
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.pagination-ul {
+    list-style: none;
+    width: 100%;
+}
+
+.pagination-li {
+    padding: 5px;
+    display: inline;
+}
