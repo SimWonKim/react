@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 import { Name, Photo, Team, Heroes } from "../leaguers/leaguer";
+import Loading from "../loading";
 
 import axios from "axios";
 // import qs from "query-string";
@@ -17,6 +18,7 @@ class LeaguerTable extends Component {
             counts: 0,
             page: 1,
             size: 10,
+            isLoading: true
         };
     }
 
@@ -33,13 +35,13 @@ class LeaguerTable extends Component {
     // 무한 호출되는 case가 있음.
     async componentDidUpdate(prevProps, prevState) {
 
-        if (this.state.page !== prevState.page) {
+        if (this.state.isLoading) {
             const queryData = {
                 size: this.state.size,
                 page: this.state.page,
             };
             const response = await this.getLeaguerList(queryData);
-            this.setState({ leaguers: response.leaguers, counts: response.counts });
+            this.setState({ leaguers: response.leaguers, counts: response.counts, isLoading: false });
         }
     }
 
@@ -97,7 +99,9 @@ class LeaguerTable extends Component {
                         const url = `/leaguers?page=${pageNum}`;
                         return (
                             <li key={index} className="pagination-li">
-                                <Link to={url} onClick={() => this.setState({ page: pageNum })}>{pageNum}</Link>
+                                <Link to={url} onClick={() => {
+                                    this.setState({ page: pageNum, isLoading: true })
+                                }}>{pageNum}</Link>
                             </li>
                         );
                     })}
@@ -108,9 +112,8 @@ class LeaguerTable extends Component {
 
     render() {
 
-        console.log('렌더링 실행.');
-
-        return (
+        return this.state.isLoading ?
+            <Loading /> :
             <div>
                 <table className="leaguer-table">
                     <tbody>
@@ -120,7 +123,7 @@ class LeaguerTable extends Component {
                 </table>
                 {this.renderPageNation()}
             </div>
-        );
+
     }
 }
 
