@@ -1,13 +1,18 @@
 import React, { Component } from "react";
 import "../../styles/css/leaguer.css";
 
+import { Link } from "react-router-dom";
+
 export class Name extends Component {
     render() {
         return (
             <div className="name">
-                <a className="no-uline" href={`leaguers/${this.props.id}`}>
+                <Link
+                    className="no-underline"
+                    to={`../../leaguers/detail/${this.props.id}`}
+                >
                     {this.props.name}
-                </a>
+                </Link>
             </div>
         );
     }

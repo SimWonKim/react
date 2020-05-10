@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import "./styles/css/app.css";
-import LeaguerTable from "./components/leaguers/leaguerTable";
+
+import Routes from "./routes/routes";
 
 class App extends Component {
     render() {
         return (
             <div>
-                <LeaguerTable />
+                <Routes />
             </div>
         );
     }

@@ -5,7 +5,6 @@ import { Name, Photo, Team, Heroes } from "../leaguers/leaguer";
 import Loading from "../loading";
 
 import axios from "axios";
-// import qs from "query-string";
 import _ from "lodash";
 
 class LeaguerTable extends Component {
@@ -16,7 +15,7 @@ class LeaguerTable extends Component {
             columns: ["이름", "사진", "소속팀", "주영웅"],
             leaguers: [],
             counts: 0,
-            page: 1,
+            page: this.props.match.params.num || 1,
             size: 10,
             isLoading: true,
         };
@@ -28,7 +27,10 @@ class LeaguerTable extends Component {
             page: this.state.page,
         };
         const response = await this.getLeaguerList(queryData);
-        this.setState({ leaguers: response.leaguers, counts: response.counts });
+        this.setState({
+            leaguers: response.leaguers,
+            counts: response.counts,
+        });
     }
 
     // props또는 state 갱신 후 가장 마지막에 호출됨.
@@ -98,10 +100,11 @@ class LeaguerTable extends Component {
                 <ul className="pagination-ul">
                     {range.map((num, index) => {
                         const pageNum = num + 1;
-                        const url = `/leaguers?page=${pageNum}`;
+                        const url = `/leaguers/pages/${pageNum}`;
                         return (
                             <li key={index} className="pagination-li">
                                 <Link
+                                    className="no-underline"
                                     to={url}
                                     onClick={() => {
                                         this.setState({
