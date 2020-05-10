@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import '../styles/css/loading.scss';
+import React, { Component } from "react";
+import "../styles/css/loading.scss";
 
 class Loading extends Component {
     render() {
@@ -15,7 +15,7 @@ class Loading extends Component {
                     <li className="hexagon hex_7"></li>
                 </ul>
             </div>
-        )
+        );
     }
 }
 

@@ -89,8 +89,8 @@
     }
 }
 
-@each $index, $top, $left in (1, 0px, 0px), (2, 0px, 42px), (3, 36px, 63px), (4, 72px, 42px), (5, 72px, 0px),
-    (6, 36px, -21px), (7, 36px, 21px)
+@each $index, $top, $left in (1, 0px, 0px), (2, 0px, 42px), (3, 36px, 63px),
+    (4, 72px, 42px), (5, 72px, 0px), (6, 36px, -21px), (7, 36px, 21px)
 {
     $time: 3s; // thx to @zeakd for this formula
     $delay: $time / 14;
