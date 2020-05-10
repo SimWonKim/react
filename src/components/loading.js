@@ -1,23 +1,22 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import CircularProgress from "@material-ui/core/CircularProgress";
+import React, { Component } from 'react';
+import '../styles/css/loading.scss';
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        display: "flex",
-        "& > * + *": {
-            marginLeft: theme.spacing(2),
-        },
-    },
-}));
-
-export default function CircularIndeterminate() {
-    const classes = useStyles();
-
-    return (
-        <div className={classes.root}>
-            <CircularProgress />
-            <CircularProgress color="secondary" />
-        </div>
-    );
+class Loading extends Component {
+    render() {
+        return (
+            <div className="loader">
+                <ul className="hexagon-container">
+                    <li className="hexagon hex_1"></li>
+                    <li className="hexagon hex_2"></li>
+                    <li className="hexagon hex_3"></li>
+                    <li className="hexagon hex_4"></li>
+                    <li className="hexagon hex_5"></li>
+                    <li className="hexagon hex_6"></li>
+                    <li className="hexagon hex_7"></li>
+                </ul>
+            </div>
+        )
+    }
 }
+
+export default Loading;

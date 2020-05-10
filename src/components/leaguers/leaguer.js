@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../styles/css/leaguer.css";
+import "../../styles/css/leaguer.css";
 
 export class Name extends Component {
     render() {

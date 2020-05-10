@@ -5,7 +5,7 @@
 
 .leaguer-table {
     font-family: OverWatch;
-    width: 700px;
+    width: 600px;
     border-collapse: collapse;
     border: 1px solid #000000;
     margin-top: 50px;
@@ -32,4 +32,22 @@
     border: 1px solid #000000;
     padding: 8px;
     font-size: 1px;
+}
+
+.pagination-div {
+    font-family: OverWatch;
+    font-size: 20px;
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.pagination-ul {
+    list-style: none;
+    width: 100%;
+}
+
+.pagination-li {
+    padding: 5px;
+    display: inline;
 }
