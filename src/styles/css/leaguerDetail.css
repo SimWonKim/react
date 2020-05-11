@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "OverWatch";
+    src: url("../fonts/koverwatch.ttf") format("truetype");
+}
+
+.background {
+    font-family: OverWatch;
+    width: 700px;
+    border-collapse: collapse;
+    border: 1px solid #000000;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-image {
+    width: 300px;
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
