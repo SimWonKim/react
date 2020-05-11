@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import { Name, Photo, Team, Heroes } from "../leaguers/leaguer";
+import { Name, Photo, Team, Heroes } from "./leaguerRow";
 import Loading from "../loading";
 
 import axios from "axios";
