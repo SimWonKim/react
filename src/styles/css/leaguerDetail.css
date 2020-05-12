@@ -21,4 +21,33 @@
     margin-left: auto;
     margin-right: auto;
     display: block;
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+.detail-table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+}
+
+.detail-table-tr {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.detail-table-th {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.logo {
+    width: 30px;
+    height: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 7px;
 }
