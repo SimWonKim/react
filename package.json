@@ -8,6 +8,7 @@
         "@testing-library/user-event": "^7.1.2",
         "antd": "^4.2.0",
         "axios": "^0.19.2",
+        "bootstrap": "^4.5.0",
         "dotenv": "^8.2.0",
         "dotenv-expand": "^5.1.0",
         "lodash": "^4.17.15",
@@ -15,6 +16,7 @@
         "node-sass": "^4.13.1",
         "query-string": "^6.12.1",
         "react": "^16.13.1",
+        "react-bootstrap": "^1.0.1",
         "react-dom": "^16.13.1",
         "react-redux": "^7.2.0",
         "react-router-dom": "^5.1.2",
@@ -26,7 +28,7 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "lint" : "eslint './src/**/*.js' --quiet --fix"
+        "lint": "eslint './src/**/*.js' --quiet --fix"
     },
     "eslintConfig": {
         "extends": "react-app"

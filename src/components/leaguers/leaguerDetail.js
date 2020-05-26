@@ -13,13 +13,20 @@ class LeaguerDetail extends Component {
 
         this.state = {
             detail: {},
+            stats: {},
+            statsRank: {},
             isLoading: true,
         };
     }
 
     async componentDidMount() {
-        const leaguerDetail = await this.getLeaguerDetail();
-        this.setState({ detail: leaguerDetail.leaguer, isLoading: false });
+        const response = await this.getLeaguerDetail();
+        this.setState({
+            detail: response.leaguer,
+            stats: response.stats,
+            statsRank: response.statRank,
+            isLoading: false,
+        });
     }
 
     async getLeaguerDetail() {
@@ -40,6 +47,21 @@ class LeaguerDetail extends Component {
             }
         } else {
             return '없음';
+        }
+    }
+
+    numberFixUnderTwo(value) {
+        return value > 0 ? Number.parseFloat(value).toFixed(2) : '-';
+    }
+
+    secondsToHourAndMinutes(seconds) {
+        const hour = parseInt(seconds / 3600);
+        const min = parseInt((seconds % 3600) / 60);
+
+        if (hour === 0 && min === 0) {
+            return '-';
+        } else {
+            return `${hour}시간 ${min}분`;
         }
     }
 
@@ -99,6 +121,83 @@ class LeaguerDetail extends Component {
                         </tr>
                     </tbody>
                 </table>
+                <div className="text-box">스탯정보</div>
+                <table className="detail-table">
+                    <tbody>
+                        <tr className="detail-table">
+                            <th className="detail-table-th">
+                                10분당 평균 처치
+                            </th>
+                            <th className="detail-table-th">
+                                {this.numberFixUnderTwo(
+                                    this.state.stats.all
+                                        .eliminations_avg_per_10m
+                                )}
+                            </th>
+                        </tr>
+                        <tr className="detail-table">
+                            <th className="detail-table-th">
+                                10분당 평균 죽음
+                            </th>
+                            <th className="detail-table-th">
+                                {this.numberFixUnderTwo(
+                                    this.state.stats.all.deaths_avg_per_10m
+                                )}
+                            </th>
+                        </tr>
+                        <tr className="detail-table">
+                            <th className="detail-table-th">
+                                10분당 평균 딜량
+                            </th>
+                            <th className="detail-table-th">
+                                {this.numberFixUnderTwo(
+                                    this.state.stats.all.hero_damage_avg_per_10m
+                                )}
+                            </th>
+                        </tr>
+                        <tr className="detail-table">
+                            <th className="detail-table-th">
+                                10분당 평균 힐량
+                            </th>
+                            <th className="detail-table-th">
+                                {this.numberFixUnderTwo(
+                                    this.state.stats.all.healing_avg_per_10m
+                                )}
+                            </th>
+                        </tr>
+                        <tr className="detail-table">
+                            <th className="detail-table-th">
+                                10분당 평균 궁극기 충전 횟수
+                            </th>
+                            <th className="detail-table-th">
+                                {this.numberFixUnderTwo(
+                                    this.state.stats.all
+                                        .ultimates_earned_avg_per_10m
+                                )}
+                            </th>
+                        </tr>
+                        <tr className="detail-table">
+                            <th className="detail-table-th">
+                                10분당 평균 막타 처치
+                            </th>
+                            <th className="detail-table-th">
+                                {this.numberFixUnderTwo(
+                                    this.state.stats.all.final_blows_avg_per_10m
+                                )}
+                            </th>
+                        </tr>
+                        <tr className="detail-table">
+                            <th className="detail-table-th">총 출전 시간</th>
+                            <th className="detail-table-th">
+                                {this.secondsToHourAndMinutes(
+                                    this.state.stats.all.time_played_total
+                                )}
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div className="text-box">영웅별 스탯</div>
             </div>
         );
     }
