@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import "../../styles/css/leaguer.css";
+import React, { Component } from 'react';
+import '../../styles/css/leaguer.css';
 
-import Util from "../../util/util";
+import Util from '../../util/util';
 
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 export class Name extends Component {
     render() {
@@ -27,7 +27,7 @@ export class Photo extends Component {
                 className="photo"
                 src={
                     this.props.url ||
-                    process.env.PUBLIC_URL + "/imgs/leaguer/default.png"
+                    process.env.PUBLIC_URL + '/imgs/leaguer/default.png'
                 }
                 alt="선수 이미지"
             ></img>
@@ -44,7 +44,7 @@ export class Team extends Component {
 export class Heroes extends Component {
     setLeaguerMainHeroes = (heroArray) => {
         if (!heroArray) {
-            return "없음";
+            return '없음';
         } else if (heroArray.length === 1) {
             return Util.setHeroName(heroArray[0]);
         } else if (heroArray.length > 1) {

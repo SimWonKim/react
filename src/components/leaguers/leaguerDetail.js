@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import "../../styles/css/leaguerDetail.css";
+import React, { Component } from 'react';
+import '../../styles/css/leaguerDetail.css';
 
-import axios from "axios";
+import axios from 'axios';
 
-import Loading from "../loading";
+import Loading from '../loading';
 
-import Util from "../../util/util";
+import Util from '../../util/util';
 
 class LeaguerDetail extends Component {
     constructor(props) {
@@ -34,12 +34,12 @@ class LeaguerDetail extends Component {
             if (Array.isArray(heroName)) {
                 return heroName
                     .map((name) => Util.setHeroName(name))
-                    .join(", ");
+                    .join(', ');
             } else {
                 return Util.setHeroName(heroName);
             }
         } else {
-            return "없음";
+            return '없음';
         }
     }
 
@@ -62,14 +62,14 @@ class LeaguerDetail extends Component {
                         <tr className="detail-table-tr">
                             <th className="detail-table-th">이름</th>
                             <th className="detail-table-th">
-                                {this.state.detail.leaguer.name || "선수이름"}
+                                {this.state.detail.leaguer.name || '선수이름'}
                             </th>
                         </tr>
                         <tr className="detail-table-tr">
                             <th className="detail-table-th">실명</th>
                             <th className="detail-table-th">
                                 {`${this.state.detail.familyName} ${this.state.detail.givenName}` ||
-                                    "선수이름"}
+                                    '선수이름'}
                             </th>
                         </tr>
                         <tr className="detail-table-tr">
@@ -77,7 +77,7 @@ class LeaguerDetail extends Component {
                             <th className="detail-table-th">
                                 {this.setHeroName(
                                     this.state.detail.leaguer.mainHeroes
-                                ) || "주 영웅 목록"}
+                                ) || '주 영웅 목록'}
                             </th>
                         </tr>
                         <tr className="detail-table-tr">
@@ -93,7 +93,7 @@ class LeaguerDetail extends Component {
                                         alt="팀로고"
                                     />
                                     {this.state.detail.team.name ||
-                                        "소속팀 이름"}
+                                        '소속팀 이름'}
                                 </div>
                             </th>
                         </tr>

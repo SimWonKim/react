@@ -1,18 +1,18 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-import { Name, Photo, Team, Heroes } from "./leaguerRow";
-import Loading from "../loading";
+import { Name, Photo, Team, Heroes } from './leaguerRow';
+import Loading from '../loading';
 
-import axios from "axios";
-import _ from "lodash";
+import axios from 'axios';
+import _ from 'lodash';
 
 class LeaguerTable extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            columns: ["이름", "사진", "소속팀", "주영웅"],
+            columns: ['이름', '사진', '소속팀', '주영웅'],
             leaguers: [],
             counts: 0,
             page: this.props.match.params.num || 1,

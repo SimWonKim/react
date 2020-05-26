@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import React, { Component } from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
-import LeaguerTable from "../components/leaguers/leaguerTable";
-import LeaguerDetail from "../components/leaguers/leaguerDetail";
+import LeaguerTable from '../components/leaguers/leaguerTable';
+import LeaguerDetail from '../components/leaguers/leaguerDetail';
 
 class Routes extends Component {
     render() {
