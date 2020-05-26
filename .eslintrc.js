@@ -1,0 +1,8 @@
+module.exports = {
+    "extends": ["react-app", "prettier", "airbnb"],
+    "plugins": ["prettier"],
+    "rules": {
+      "prettier/prettier": ["error"],
+      "react/jsx-filename-extension": 0
+    }
+}
