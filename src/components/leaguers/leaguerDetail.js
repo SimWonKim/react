@@ -31,7 +31,7 @@ class LeaguerDetail extends Component {
 
     async getLeaguerDetail() {
         const id = this.props.match.params.num;
-        const url = `${process.env.REACT_APP_SERVER_URL}/leaguers/${id}`;
+        const url = `${process.env.REACT_APP_BASE_URL}/leaguers/${id}`;
         const result = await axios.get(url);
         return result.data;
     }

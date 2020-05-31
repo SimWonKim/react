@@ -51,7 +51,7 @@ class LeaguerTable extends Component {
     }
 
     getLeaguerList = async (query) => {
-        const url = `${process.env.REACT_APP_SERVER_URL}/leaguers?page=${query.page}&size=${query.size}`;
+        const url = `${process.env.REACT_APP_BASE_URL}/leaguers?page=${query.page}&size=${query.size}`;
         const result = await axios.get(url);
         return result.data;
     };
