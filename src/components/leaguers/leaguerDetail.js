@@ -21,6 +21,9 @@ class LeaguerDetail extends Component {
 
     async componentDidMount() {
         const response = await this.getLeaguerDetail();
+
+        console.log(response);
+
         this.setState({
             detail: response.leaguer,
             stats: response.stats,
